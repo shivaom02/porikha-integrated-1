@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/authContexts/authContext';
-import '../../App.css';
+import '../../css/register.css';
 
 const Register = (props) => {
   const {
@@ -62,91 +62,93 @@ const Register = (props) => {
   };
 
   return (
-    <div className='register'>
-      <form className='probinfo' onSubmit={submit}>
-        <h1 className='sign'>Sign Up</h1>
-        <p className='sign2'>Please fill in this form to create an account.</p>
-        <input
-          className='username'
-          type='text'
-          placeholder='Enter name'
-          name='name'
-          required
-          autoComplete='off'
-          onChange={handleChange}
-          value={name}
-        />
-        <input
-          className='username'
-          type='email'
-          placeholder='Enter Email'
-          name='email'
-          required
-          autoComplete='off'
-          onChange={handleChange}
-          value={email}
-        />
-        <input
-          className='username'
-          type='number'
-          placeholder='Enter Mobile Number'
-          name='phoneNumber'
-          required
-          autoComplete='off'
-          onChange={handleChange}
-          value={phoneNumber}
-        />
-        <input
-          className='username'
-          type='password'
-          placeholder='Enter Password'
-          name='password'
-          required
-          onChange={handleChange}
-          value={password}
-        />
-        <input
-          className='username'
-          type='password'
-          placeholder='Repeat Password'
-          name='password_repeat'
-          required
-          onChange={handleChange}
-          value={password_repeat}
-        />
-        <input
-          className='username'
-          type='text'
-          placeholder='Currently Working institution'
-          name='institute'
-          required
-          autoComplete='off'
-          onChange={handleChange}
-          value={institute}
-        />
+    
+    <body className="reg">
+    <div className="wrapper">
+    <section className="left">
+      <img className="logo" src={src} alt="" />
+      <div className="question">
 
-        {hide === false && errors !== null && (
-          <button style={{ height: '40px', color: 'white', background: 'red' }}>
-            {errors.msg ? errors.msg : errors.error[0].msg}
-            <button style={{ marginLeft: '50%' }} onClick={hideDisplay}>
-              X
-            </button>
-          </button>
-        )}
-
-        <p className='sign2'>
-          Do have an account ?{' '}
-          <Link to='/login' style={{ color: 'dodgerblue' }}>
-            Login Here
-          </Link>
-          .
-        </p>
-        <button type='submit' className='signupbtn'>
-          Sign up
+          Already Registered?
+      
+      </div>
+      <div className="btn noHover">
+        <button className="join noHover" type="submit">
+           <Link to="/login" style={{color:"white",textDecoration:'none'}}>Sign Up</Link>
         </button>
+        <p className="" style={{marginTop:'50px'}}><Link to="/student" style={{color:"black",textDecoration:'none',fontSize:'150%'}}>Are you as student ?</Link>.</p>
+      </div>
+    </section>
+    <section className="right">
+      <div>
+        <h2 className="signIn">Sign In</h2>
+      </div>
+      <form action="post" onSubmit={submit}>
+        <div className="input-box">
+          <input className="name" 
+            type="text" 
+            placeholder="Name" 
+            required 
+            onChange={handleChange}
+            value={name} />
+        </div>
+        <div>
+          <input className="email" type="email" placeholder="Email" required onChange={handleChange} value={email}/>
+        </div>
+        <div>
+          <input
+            className="phnNo"
+            type="tel"
+            placeholder="Mobile Number"
+            required
+            onChange={handleChange} 
+            value={phoneNumber}
+          />
+        </div>
+        <div>
+          <input
+            className="pass"
+            type="password"
+            placeholder="Password"
+            required
+            onChange={handleChange} 
+            value={password}
+          />
+        </div>
+        <div className="input-box">
+          <input className="name" 
+            type="password" 
+            placeholder="Repeat Password" 
+            name="password_repeat" 
+            required 
+            onChange={handleChange} 
+            value={password_repeat}/>   
+        </div>
+        <div className="input-box">
+           <input className="name" 
+            type="text" 
+            placeholder="Currently Working institution"
+            name="institute" 
+            required 
+            autoComplete="off"
+            onChange={handleChange} 
+            value={institute}/>
+        </div>
+        <div>
+          <button className="btnSignIn" type="submit">
+            Sign In
+          </button>
+          { hide===false && errors !== null && <button style={{height:'40px',color:'white',background:'red'}}>
+          {errors.msg ? errors.msg : errors.error[0].msg }
+          <button style={{marginLeft:'50%'}} onClick={hideDisplay}>X</button>
+          </button>} 
+        </div>
       </form>
-    </div>
-  );
+    </section>
+  </div>
+  </body>
+      
+    );
 };
 
 export default Register;
