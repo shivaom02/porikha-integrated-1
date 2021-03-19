@@ -40,15 +40,14 @@ const Register = (props) => {
     institute
   } = teacher;
 
-  const handleChange = (e)=>{
+  const handleChange = (e) => {
     setTeacher({
       ...teacher,
-      [e.target.name]:e.target.value
-    })
-    console.log(teacher);
+      [e.target.name]: e.target.value
+    });
+    console.log(e.target);
     clearError();
- }
- 
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -89,45 +88,44 @@ const Register = (props) => {
       </div>
       <form action="post" onSubmit={submit}>
         <div className="input-box">
-          
           <input className="name" 
-              type="text"  
-              placeholder="Name"
-              name='name'
-              required
-              autoComplete="off"
-              onChange={handleChange}
-              value={name}/>
-    
+            type="text" 
+            placeholder="Name" 
+            required 
+            name='name'
+            onChange={handleChange}
+            value={name} />
         </div>
         <div>
-          <input className="email" 
-              type="email" 
-              placeholder="Email"
-              name="email" 
-              required 
-              onChange={handleChange} 
-              value={email}/>
+          <input className="email"
+             type="email" 
+             placeholder="Email"
+             required
+             name='email'
+             onChange={handleChange}
+             value={email}/>
         </div>
         <div>
-          <input 
+          <input
             className="phnNo"
-            type="Number"
-            name="phoneNumber"
+            type="tel"
             placeholder="Mobile Number"
             required
+            name='phoneNumber'
             onChange={handleChange} 
-            value={phoneNumber}  />
+            value={phoneNumber}
+          />
         </div>
         <div>
-          <input className="pass" 
-            type="text" 
-            placeholder="Currently Working institution"
+          <input
+            className="pass"
+            type="password"
             placeholder="Password"
             required
-            name="password"
+            name='password'
             onChange={handleChange} 
-            value={password} />
+            value={password}
+          />
         </div>
         <div className="input-box">
           <input className="name" 

@@ -64,6 +64,7 @@ const Login=(props)=>{
              type="email" 
              placeholder="Email"
              required 
+             name='email'
              autoComplete="off"
              onChange={handleChange}
              value={email}/>
@@ -75,6 +76,7 @@ const Login=(props)=>{
             type="password"
             placeholder="Password"
             required
+            name='password'
             autoComplete="off"
             onChange={handleChange} 
             value={password}

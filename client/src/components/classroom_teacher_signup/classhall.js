@@ -7,7 +7,7 @@ import ClassRoom from './classRoom';
 import ClassContext from '../../context/classContexts/classContext';
 import ClassroomSearch from './classroomSearch';
 import Noresults from './Noresults';
-import authContext from '../../context/authContexts/authContext';
+import AuthContext from '../../context/authContexts/authContext';
 
 const Classhall = () => {
   const {
@@ -19,7 +19,7 @@ const Classhall = () => {
     getClassroom
   } = useContext(ClassContext);
 
-  const { log_out, clearError, teacher, getTeacher } = useContext(authContext);
+  const { log_out, clearError, teacher, getTeacher } = useContext(AuthContext);
 
   const [teacherState, setTeacherState] = useState(null);
 
