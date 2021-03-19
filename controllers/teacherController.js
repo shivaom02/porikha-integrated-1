@@ -45,7 +45,7 @@ exports.createTeacher = async (req, res) => {
   `,
       html: `
   <h2>Click on the below link to verify your email: </h2>
-  <a href="${process.env.CLIENT_URL}/teacher/activateTeachher/${token}">Click Here to Verify.</a>
+  <a href="${process.env.CLIENT_URL}/teacher/activateTeacher/${token}">Click Here to Verify.</a>
   `
     };
 
@@ -57,10 +57,10 @@ exports.createTeacher = async (req, res) => {
 };
 
 exports.activateTeacher = async (req, res) => {
-  const token = req.params.token;
+  const emailToken = req.params.token;
 
-  if (token) {
-    jwt.verify(token, process.env.jwtToken, async (err, decodedToken) => {
+  if (emailToken) {
+    jwt.verify(emailToken, process.env.jwtToken, async (err, decodedToken) => {
       if (err) {
         return res.status(400).json({ msg: 'Incorrect or Expired link!' });
       }
@@ -80,11 +80,10 @@ exports.activateTeacher = async (req, res) => {
         });
 
         await newTeacher.save();
-        const teacherToken = await newTeacher.generateAuthToken();
+        const token = await newTeacher.generateAuthToken();
         res.status(201).json({
-          msg: 'Account Activated!',
           teacher: newTeacher,
-          teacherToken
+          token
         });
       } catch (error) {
         console.error(error.message);
