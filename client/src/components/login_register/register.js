@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../context/authContexts/authContext';
 import '../../css/register.css';
 
+import src from './images/logo.png';
+
 const Register = (props) => {
   const {
     // registerTeacher,
