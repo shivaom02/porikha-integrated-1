@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from "react";
 import "../../css/Page1.css";
 import { Link , useParams } from "react-router-dom";
-import Navbar from '../navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 import SearchExam from './searchExams';
 
 import AppContext from '../../context/examContexts/AppContext';
@@ -30,9 +30,9 @@ const Exam=()=>{
             <Navbar />
             <div className="Page1">
                     <div className="lev1">
-                        <SearchExam className="box1"></SearchExam>
+                        {/* <SearchExam className="box1"></SearchExam> */}
                         <div className="box2">
-                            <h2><Link to = {`/exam/create/${_id}`} style={{textDecoration:'none',color:'white'}}>Create Exam</Link></h2>
+                            <h2 style={{paddingTop:'10px'}}><Link to = {`/exam/create/${_id}`} style={{textDecoration:'none',color:'white'}}>Create Exam</Link></h2>
                         </div>
                     </div>
                     <div className="history" >
@@ -53,7 +53,7 @@ const Exam=()=>{
                                 <Noresults /> : 
                                  search.map(exam =>(
                                     <tr>
-                                       <Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'white'}}>{exam._id}</Link>
+                                       <td><Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'black'}}>{exam._id}</Link></td>
                                        <td>{exam.date.split("T")[0]}</td>
                                        <td>{exam.name}</td>
                                     </tr>
@@ -61,7 +61,7 @@ const Exam=()=>{
                                  exams===null || exams.length===0 ? <Noresults /> :
                                  exams.map(exam =>(
                                     <tr>
-                                       <Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'white'}}>{exam._id}</Link>
+                                       <td><Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'black'}}>{exam._id}</Link></td>
                                        <td>{exam.date.split("T")[0]}</td>
                                        <td>{exam.name}</td>
                                     </tr>
