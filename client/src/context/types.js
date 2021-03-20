@@ -36,5 +36,5 @@ export const GET_EXAMS = 'GET_EXAMS';
 export const SEARCH_EXAM_BY_NAME = 'SEARCH_EXAM_BY_NAME';
 export const CLEAR_EXAM_BY_NAME = 'CLEAR_EXAM_BY_NAME';
 
-
+export const CONFIRM_EMAIL = 'CONFIRM_EMAIL'
 

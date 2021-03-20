@@ -1,8 +1,6 @@
 import React,{ useState, useContext,useEffect } from 'react';
 import classRoomContext from '../../context/classContexts/classContext';
 
-import '../../css/classhall.css';
-
 const Model = ({open,isClose,children}) => {
 
     const {add_classroom , editDetails ,updateDetails } = useContext( classRoomContext );
@@ -12,7 +10,7 @@ const Model = ({open,isClose,children}) => {
        top: '50%',
        left: '50%',
        transform: 'translate(-50%, -50%)',
-       backgroundColor: '#787878',
+       backgroundColor: 'white',
        borderRadius:'1rem',
        padding: '10px',
        zIndex: 1000,
@@ -26,13 +24,14 @@ const Model = ({open,isClose,children}) => {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, .7)',
+        backgroundColor: 'rgba(70, 70, 70, 49%)',
+       
       
         zIndex: 1000
     }
-    const INPUT_STYLES={width:'200%',height:'25%',padding:'10%',fontSize:'large',marginLeft:'-50%',color:'black',backgroundColor:'whitesmoke'};
-    const FORM_STYLES={backgroundColor:'black', height:'68.7%',borderRadius:'10px',marginTop:'4%'};
-    const BUTTON_STYLES={border:'1px solid white',borderRadius:'1em',fontSize:'130%',padding:'6% 0% 6% 0%',margin:'0 3% -5% 3%',cursor:'pointer',backgroundColor:'grey'};
+    const INPUT_STYLES={border:'3px solid #1DA6CF',width:'200%',height:'25%',padding:'10%',fontSize:'large',marginLeft:'-50%',color:'white',background: 'white'};
+    const FORM_STYLES={backgroundColor:'#1DA6CF', height:'68.7%',borderRadius:'10px',marginTop:'2%'};
+    const BUTTON_STYLES={border:'1px solid white',borderRadius:'1em',fontSize:'130%',padding:'6% 0% 6% 0%',margin:'0 3% -5% 3%',cursor:'pointer',color:'white',backgroundColor:'blue'};
 
     const [classroom,setClassroom]=useState({
         name:'',
@@ -80,13 +79,13 @@ const Model = ({open,isClose,children}) => {
     }
     return (
         open!==true?null:
-        <div  className='classHall'>
+        <div >
             <div style={OVERLAY_STYLES} />
             <div style={MODEL_STYLES}>
               <button onClick={isClose} style={{marginLeft:"80%",marginTop:"0vh"}}>&#10060;</button><br/><br/>
-            <span style={{fontSize:"110%",marginTop:"0"}}>ADD a NEW CLASS :</span>
+            <span style={{fontSize:"160%",marginTop:"0",color:'#0078A6'}}>ADD NEW CLASS :</span>
                <br/><br/>
-               <span style={{border:'1px solid black',padding:'2px'}}>
+               <span style={{border:'1px solid blue',padding:'2px'}}>
                    {children}
                 </span>
               <form className="probinfo" style={FORM_STYLES} onSubmit={onSubmit}>
