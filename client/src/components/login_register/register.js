@@ -7,8 +7,8 @@ import src from './images/logo.png';
 
 const Register = (props) => {
   const {
-    // registerTeacher,
-    confirmMail,
+    registerTeacher,
+    //confirmMail,
     userAuth,
     errors,
     setError,
@@ -49,16 +49,16 @@ const Register = (props) => {
     clearError();
   };
 
-  const submit = async (e) => {
+  const submit = async (e)=>{
     e.preventDefault();
-    if (password !== password_repeat) {
+    if(password !== password_repeat){
       await setError("Password don't match");
       setHide(false);
-    } else {
-      await confirmMail({ name, email, password, phoneNumber, institute });
+    }else{
+      await registerTeacher({name,email,password,phoneNumber,institute});
       setHide(false);
     }
-  };
+  }
 
   const hideDisplay = (e) => {
     setHide(true);

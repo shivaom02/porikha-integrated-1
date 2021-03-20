@@ -2,6 +2,8 @@ import React,{useContext} from 'react';
 import {Link} from 'react-router-dom';
 import classroomContext from '../../context/classContexts/classContext';
 
+import '../../css/classhall.css';
+
 const ClassRoom = ({classRoom}) => {
     const {delete_classroom , changeIsOpen , changeEditDetails} = useContext(classroomContext);
     const {_id,name,strength,lastexam,examno}=classRoom;
@@ -16,7 +18,7 @@ const ClassRoom = ({classRoom}) => {
     }
     const noexam = "No Exam Till Date";
     return (
-        <div>
+        <div  className='classHall'>
             <div className="card">
             <Link to={`/exam/${_id}`} style={{textDecoration:"none"}}>
               <div className="subname">

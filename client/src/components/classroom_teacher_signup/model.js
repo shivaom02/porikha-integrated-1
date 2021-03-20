@@ -1,6 +1,8 @@
 import React,{ useState, useContext,useEffect } from 'react';
 import classRoomContext from '../../context/classContexts/classContext';
 
+import '../../css/classhall.css';
+
 const Model = ({open,isClose,children}) => {
 
     const {add_classroom , editDetails ,updateDetails } = useContext( classRoomContext );
@@ -78,7 +80,7 @@ const Model = ({open,isClose,children}) => {
     }
     return (
         open!==true?null:
-        <div >
+        <div  className='classHall'>
             <div style={OVERLAY_STYLES} />
             <div style={MODEL_STYLES}>
               <button onClick={isClose} style={{marginLeft:"80%",marginTop:"0vh"}}>&#10060;</button><br/><br/>
