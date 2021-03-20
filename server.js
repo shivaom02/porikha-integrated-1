@@ -88,7 +88,7 @@ io.on('connection', (socket) => {
     });
   });
 
-  //a student or teacher leaves the exam hall
+  //any student or teacher leaves the exam hall
   socket.on('disconnect', async () => {
     const user = await getCurrentUser(socket.id);
 
