@@ -34,7 +34,7 @@ const Login=(props)=>{
     loginTeacher({email,password});
   }
   return (
-    <body>
+    <body className="reg">
     <div className="wrapper">
     <section className="left">
       <img className="logo" src={src} alt="" />

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Noresults = () => {
     return (
-            <tr>
+            <tr style={{color:'black'}}>
                <td>NA</td>
                <td>NA</td>   
                 <td>0</td>
