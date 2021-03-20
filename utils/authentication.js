@@ -1,5 +1,5 @@
 const jwt=require("jsonwebtoken");
-const Teacher=require("../../models/teacher");
+const Teacher=require("../models/teacher");
 
 const auth=async (req,res,next)=>{
     try{
