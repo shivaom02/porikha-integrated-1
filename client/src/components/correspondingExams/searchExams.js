@@ -18,9 +18,9 @@ const ExamSearch = () => {
       }
   }
   return (
-    <div style={{background:'white',height:'35px'}}>
+    <div style={{background:'white',height:'35px',border:'1px solid black',borderRadius:'15px',marginLeft:'-5%'}}>
      
-      <input type="text" ref={searchValue} className="search" placeholder=" Search Exam by name ..." onChange={handleChange} style={{fontSize:'1.1rem',padding:'4px',outline:'none'}}/>
+      <input type="text" ref={searchValue} className="search" placeholder=" Search Exam by name ..." onChange={handleChange} style={{fontSize:'1.1rem',padding:'4px',border:'none'}}/>
      
       <i className="fas fa-search search-icon" style={{color:'black'}} />
     

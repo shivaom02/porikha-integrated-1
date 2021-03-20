@@ -26,6 +26,10 @@ h1{
     flex: 80%;
   }
   
+  .flex-item-left input:focus{
+      outline: none;
+  }
+
   .flex-item-right {
     padding: 10px;
     flex: 40%;
@@ -62,6 +66,10 @@ h1{
       border: 5px solid #fff;
       border-radius: 5%;
       margin-top: 135px;
+  }
+  #studentList{
+      border:'2px solid black';
+      min-width:'20vh';
   }
   hr{
       width: 340%;

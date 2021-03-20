@@ -32,18 +32,18 @@ const Exam=()=>{
                     <div className="lev1">
                         <SearchExam className="box1"></SearchExam> 
                         <div className="box2">
-                            <h2 style={{paddingTop:'10px'}}><Link to = {`/exam/create/${_id}`} style={{textDecoration:'none',color:'white'}}>Create Exam</Link></h2>
+                            <h2 style={{padding:'10px',background:'#1DA6CF'}}><Link to = {`/exam/create/${_id}`} style={{textDecoration:'none',color:'white'}}>Create Exam</Link></h2>
                         </div>
                     </div>
                     <div className="history" >
-                        <h4 style={{color:'black'}}>HISTORY</h4>
+                        <h4 style={{color:'black',fontWeight:'bold'}}>HISTORY</h4>
                     </div>
                     <div className="table">
-                    <table>
+                    <table  style={{borderRadius:'10px'}}>
                             <tr style={{color:'black',fontWeight:'bold'}}>
-                                <th>Exam ID</th>
-                                <th>EXAM DATE</th>
-                                <th>NAME</th>
+                                <th style={{fontWeight:'bold'}}>Exam ID</th>
+                                <th style={{fontWeight:'bold'}}>EXAM DATE</th>
+                                <th style={{fontWeight:'bold'}}>NAME</th>
                             </tr>
 
                             { search!==null ? 
@@ -52,7 +52,7 @@ const Exam=()=>{
                                 
                                 <Noresults /> : 
                                  search.map(exam =>(
-                                    <tr>
+                                    <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
                                        <td><Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'black'}}>{exam._id}</Link></td>
                                        <td>{exam.date.split("T")[0]}</td>
                                        <td>{exam.name}</td>
@@ -60,7 +60,7 @@ const Exam=()=>{
                                 )) : 
                                  exams===null || exams.length===0 ? <Noresults /> :
                                  exams.map(exam =>(
-                                    <tr>
+                                    <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
                                        <td><Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'black'}}>{exam._id}</Link></td>
                                        <td style={{color:'black'}}>{exam.date.split("T")[0]}</td>
                                        <td style={{color:'black'}}>{exam.name}</td>

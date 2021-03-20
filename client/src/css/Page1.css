@@ -24,6 +24,9 @@
     font-weight: 300;
     letter-spacing: 2px;
 }
+.Page1 input:focus{
+  outline:none;
+}
 .Page1 .box2
 {
     border: 5px solid #fff;
