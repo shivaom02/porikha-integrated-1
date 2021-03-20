@@ -46,7 +46,7 @@
 .Page1 table
 {
     width: 100%;
-    border:1px solid white;
+    border:3px solid rgb(0, 0, 0);
 }
 .Page1 th{
     padding: 18px;

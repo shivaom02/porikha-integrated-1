@@ -30,17 +30,17 @@ const Exam=()=>{
             <Navbar />
             <div className="Page1">
                     <div className="lev1">
-                        {/* <SearchExam className="box1"></SearchExam> */}
+                        <SearchExam className="box1"></SearchExam> 
                         <div className="box2">
                             <h2 style={{paddingTop:'10px'}}><Link to = {`/exam/create/${_id}`} style={{textDecoration:'none',color:'white'}}>Create Exam</Link></h2>
                         </div>
                     </div>
                     <div className="history" >
-                        <h4>HISTORY</h4>
+                        <h4 style={{color:'black'}}>HISTORY</h4>
                     </div>
                     <div className="table">
                     <table>
-                            <tr>
+                            <tr style={{color:'black',fontWeight:'bold'}}>
                                 <th>Exam ID</th>
                                 <th>EXAM DATE</th>
                                 <th>NAME</th>
@@ -62,8 +62,8 @@ const Exam=()=>{
                                  exams.map(exam =>(
                                     <tr>
                                        <td><Link to ={`/exam/details/${exam._id}`} style={{textDecoration:'none',color:'black'}}>{exam._id}</Link></td>
-                                       <td>{exam.date.split("T")[0]}</td>
-                                       <td>{exam.name}</td>
+                                       <td style={{color:'black'}}>{exam.date.split("T")[0]}</td>
+                                       <td style={{color:'black'}}>{exam.name}</td>
                                     </tr>
                                 )) 
                             }
