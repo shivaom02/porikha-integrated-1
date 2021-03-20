@@ -42,29 +42,26 @@ const AuthState = (props) => {
 
   //register teacher
 
-  const registerTeacher = async (token) => {
+  const registerTeacher = async teacher =>{
     const config = {
       header: {
         'Content-Type': 'application/json'
       }
-    };
-    try {
-      const res = await axios.post(
-        `/teacher/activateTeacher/${token}`,
-        token,
-        config
-      );
-      dispatch({
-        type: SUCCESS_REGISTER,
-        payload: res.data
-      });
-    } catch (error) {
-      dispatch({
-        type: FAIL_REGISTER,
-        payload: error.response.data
-      });
     }
-  };
+     try {
+       const res = await axios.post('/teacher',teacher,config)
+       dispatch({
+         type:SUCCESS_REGISTER,
+         payload:res.data
+       })
+     } catch (error) {
+       dispatch({
+         type:FAIL_REGISTER,
+         payload:error.response.data
+       })
+     }
+  }
+
   //login teacher
 
   const loginTeacher = async (loginData) => {
