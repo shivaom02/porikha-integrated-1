@@ -38,3 +38,4 @@ export const CLEAR_EXAM_BY_NAME = 'CLEAR_EXAM_BY_NAME';
 
 export const CONFIRM_EMAIL = 'CONFIRM_EMAIL'
 
+export const  CHECK_WEB ="CHECK_WEB";
