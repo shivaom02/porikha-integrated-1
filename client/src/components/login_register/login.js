@@ -34,7 +34,7 @@ const Login=(props)=>{
     loginTeacher({email,password});
   }
   return (
-    <body className="reg">
+    <div className="reg">
     <div className="wrapper">
     <section className="left">
       <img className="logo" src={src} alt="" />
@@ -43,13 +43,13 @@ const Login=(props)=>{
           New User?
       
       </div>
-      <div className="btn">
+      <div className="btn111">
           <Link to="/register" style={{color:"white",textDecoration:'none'}}>
              <button className="join" type="submit">
                  Sign Up.
              </button>
           </Link>
-        <p className="" style={{marginTop:'50px'}}><Link to="/student" style={{color:"black",textDecoration:'none',fontSize:'150%'}}>Are you as student ?</Link>.</p>
+          <p className="" style={{marginTop:'50px'}}><Link to="/student" style={{color:"white",textDecoration:'none',fontSize:'150%',fontWeight:'bold'}}>Are you as student ?</Link>.</p>
 
       </div>
     </section>
@@ -96,7 +96,7 @@ const Login=(props)=>{
       </form>
     </section>
   </div>
-  </body>
+  </div>
   )
 }
 
