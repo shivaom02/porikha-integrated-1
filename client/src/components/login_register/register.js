@@ -66,7 +66,7 @@ const Register = (props) => {
 
   return (
     
-    <body className="reg">
+    <div className="reg">
     <div className="wrapper">
     <section className="left">
       <img className="logo" src={src} alt="" />
@@ -75,11 +75,11 @@ const Register = (props) => {
           Already Registered?
       
       </div>
-      <div className="btn noHover">
+      <div className="btn111 noHover">
         <button className="join noHover" type="submit">
            <Link to="/login" style={{color:"white",textDecoration:'none'}}>Sign Up</Link>
         </button>
-        <p className="" style={{marginTop:'50px'}}><Link to="/student" style={{color:"black",textDecoration:'none',fontSize:'150%'}}>Are you as student ?</Link>.</p>
+        <p className="" style={{marginTop:'50px'}}><Link to="/student" style={{color:"white",textDecoration:'none',fontSize:'150%',fontWeight:'bold'}}>Are you as student ?</Link>.</p>
       </div>
     </section>
     <section className="right">
@@ -158,7 +158,7 @@ const Register = (props) => {
       </form>
     </section>
   </div>
-  </body>
+  </div>
       
     );
 };

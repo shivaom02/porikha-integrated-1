@@ -14,7 +14,7 @@ const ClassroomSearch = () => {
       }
   }
   return (
-    <div className='classHall' style={{marginLeft:'50vw',transform:'translateX(-50%)',marginTop:'-50px',position:'absolute'}}>
+    <div style={{marginLeft:'50vw',transform:'translateX(-50%)',marginTop:'-50px',position:'absolute'}}>
      
       <input type="text" ref={searchValue} className="search" placeholder=" Search Classroom by name ..." onChange={handleChange} style={{fontSize:'1.1rem'}}/>
      

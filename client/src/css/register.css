@@ -1,6 +1,7 @@
-body {
+.reg {
   margin: 0;
   background: linear-gradient(to left, #fff 50%, #0093d4 50%);
+  height: 100vh;
 }
 .wrapper {
   display: flex;
@@ -63,7 +64,7 @@ body {
   width: 55%;
 }
 
-.btn {
+.btn111 {
   position: relative;
   text-align: center;
   padding-top: 7rem;
@@ -71,7 +72,7 @@ body {
   z-index: 1;
   background:transparent;
 }
-.btn:hover{
+.btn111:hover{
   transform: none;
 }
 /* .leftt {

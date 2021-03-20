@@ -29,7 +29,17 @@ const Model = ({open,isClose,children}) => {
       
         zIndex: 1000
     }
-    const INPUT_STYLES={border:'3px solid #1DA6CF',width:'200%',height:'25%',padding:'10%',fontSize:'large',marginLeft:'-50%',color:'white',background: 'white'};
+    const INPUT_STYLES={
+        border:'3px solid white'
+        ,width:'200%',
+        height:'25%',
+        padding:'10%',
+        fontSize:'large',
+        marginLeft:'-50%',
+        color:'white',
+        background: 'transparent',
+        borderRadius:'20px'
+    };
     const FORM_STYLES={backgroundColor:'#1DA6CF', height:'68.7%',borderRadius:'10px',marginTop:'2%'};
     const BUTTON_STYLES={border:'1px solid white',borderRadius:'1em',fontSize:'130%',padding:'6% 0% 6% 0%',margin:'0 3% -5% 3%',cursor:'pointer',color:'white',backgroundColor:'blue'};
 
