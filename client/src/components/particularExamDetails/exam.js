@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import StudentContext from '../../context/studentContexts/StudentContext';
 import Noresults from "./Noresults";
-import Navbar  from '../Navbar/Navbar';
+import Navbar  from '../navbar/Navbar';
 
 const Exam=()=>{
 
