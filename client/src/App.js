@@ -35,7 +35,7 @@ function App() {
               <Router>
                 <div>
                   <Switch>
-                    <PrivateRoute path='/teacher/activeTeacher/:token' component={Classhall} />
+                    <PrivateRoute path='/' component={Classhall} />
                     <PrivateRoute exact path='/exam/:_id' component={Exam} />
                     <Route path='/register' component={Register} />
                     <Route path='/confirmEmail' component={ConfirmEmail} />
