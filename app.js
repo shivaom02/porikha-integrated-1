@@ -3,6 +3,8 @@ const app = express();
 const classroomRouter = require('./routers/classroom');
 const teacherRouter = require('./routers/teacher');
 const studentRouter = require('./routers/student');
+const path = require('path');
+
 const examRouter = require('./routers/exam');
 
 app.use(express.urlencoded({ extended: false }));

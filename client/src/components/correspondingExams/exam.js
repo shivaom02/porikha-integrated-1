@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from "react";
 import "../../css/Page1.css";
 import { Link , useParams } from "react-router-dom";
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../navbar/Navbar';
 import SearchExam from './searchExams';
 
 import AppContext from '../../context/examContexts/AppContext';
