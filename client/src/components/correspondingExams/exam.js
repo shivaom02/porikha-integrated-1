@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from "react";
 import "../../css/Page1.css";
 import { Link , useParams } from "react-router-dom";
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../navbar/Navbar';
 import SearchExam from './searchExams';
 
 import AppContext from '../../context/examContexts/AppContext';
@@ -17,13 +17,13 @@ const Exam=()=>{
     
     useEffect(async () => {
 
-           await getCorrespondingExams(_id);
+            getCorrespondingExams(_id);
 
-           await setExams(correspondingExams);
+            setExams(correspondingExams);
 
            console.log(correspondingExams);
 
-    }, [correspondingExams])
+    }, [correspondingExams, _id])
 
     return (
         <>
