@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pdftron/webviewer": "^7.3.0",
+    "@tensorflow-models/facemesh": "0.0.5",
+    "@tensorflow/tfjs": "^3.3.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.4.0",
@@ -10,8 +13,10 @@
     "query-string": "^6.14.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-pdf": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-webcam": "^5.2.3",
     "socket.io-client": "^3.1.1",
     "web-vitals": "^0.2.4"
   },
