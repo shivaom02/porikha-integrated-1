@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Register from './components/login_register/register';
-import ConfirmEmail from './components/login_register/confirmationPage';
 import Login from './components/login_register/login';
 import Classhall from './components/classroom_teacher_signup/classhall';
 import ClassState from './context/classContexts/classState';
@@ -19,6 +18,7 @@ import Student_Entry from './components/exam/Student_Entry';
 import AppState from './context/examContexts/AppState';
 import ExamDetails from './components/particularExamDetails/exam';
 import EhStudent from "./components/EHStudent/EHStudent";
+
 import StudentAnswerScript from './components/studentAnswerScript.js/studentAnswer';
 import Editor from "./components/Editor/Editor"
 if (localStorage.token) {
@@ -38,7 +38,6 @@ function App() {
                     <PrivateRoute path='/' component={Classhall} />
                     <PrivateRoute exact path='/exam/:_id' component={Exam} />
                     <Route path='/register' component={Register} />
-                    <Route path='/confirmEmail' component={ConfirmEmail} />
                     <Route path='/login' component={Login} />
                     <PrivateRoute
                       path='/exam/create/:_id'

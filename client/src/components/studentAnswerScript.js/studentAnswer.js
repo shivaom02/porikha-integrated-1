@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{ useEffect, useState } from 'react';
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { markButton , buttonS , buttonM  , markContainerDesciption , markListStyle , questionAnswer } from './studentCSS';
 
@@ -36,36 +36,43 @@ const StudentAnswerScript=()=>{
     return window.btoa(binary);
   };
   
-  useEffect(async ()=>{
+  useEffect( ()=>{
+    (async () => {
+      const response = await axios.get(`/student/getStudentDetails/${_id}`);
 
-   const response = await axios.get(`/student/getStudentDetails/${_id}`);
+      await setStudent(response.data);
 
-   await setStudent(response.data);
+      console.log(response.data.student.owner);
 
-   console.log(response.data.student.owner);
+      const questionPaper = await axios.get(
+        `/exam/getQuestionPaper/${response.data.student.owner}`
+      );
 
-   const questionPaper = await axios.get(`/exam/getQuestionPaper/${response.data.student.owner}`);
+      const base64FlagQ = `data:${questionPaper.data.exam.questionPaperType};base64,`;
 
-   const base64FlagQ = `data:${questionPaper.data.exam.questionPaperType};base64,`;
-           
-   const imageStrQ = arrayBufferToBase64(questionPaper.data.exam.questionPaper.data);
-   
-   setQuestionPaper( base64FlagQ + imageStrQ );
+      const imageStrQ = arrayBufferToBase64(
+        questionPaper.data.exam.questionPaper.data
+      );
 
-   setQuestionPaperType(questionPaper.data.exam.questionPaperType);
+      setQuestionPaper(base64FlagQ + imageStrQ);
 
-   console.log(questionPaper);
+      setQuestionPaperType(questionPaper.data.exam.questionPaperType);
 
-   await setMarksList(response.data.student.marksDistribution);
-   
-   await setTotalMarks(response.data.student.marks);
+      console.log(questionPaper);
 
-   const base64Flag = `data:${response.data.student.answerPaperType};base64,`;
-           
-   const imageStr = arrayBufferToBase64(response.data.student.answerPaper.data);
-   
-   setPdfSrc( base64Flag + imageStr );
-  },[])
+      await setMarksList(response.data.student.marksDistribution);
+
+      await setTotalMarks(response.data.student.marks);
+
+      const base64Flag = `data:${response.data.student.answerPaperType};base64,`;
+
+      const imageStr = arrayBufferToBase64(
+        response.data.student.answerPaper.data
+      );
+
+      setPdfSrc(base64Flag + imageStr);
+    })();
+  },[_id])
 
   const handleChange = (e)=>{
     setCount(e.target.value);

@@ -7,6 +7,8 @@ const path = require('path');
 
 const examRouter = require('./routers/exam');
 
+app.get('/', (req,res) => res.send('API Running...'));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
