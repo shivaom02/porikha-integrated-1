@@ -5,8 +5,6 @@ import '../../css/register.css';
 import src from './images/logo.png';
 
 
-import src from './images/logo.png';
-
 const Register = (props) => {
   const {
     // registerTeacher,

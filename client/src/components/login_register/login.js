@@ -4,8 +4,6 @@ import AuthContext from '../../context/authContexts/authContext';
 import '../../css/register.css';
 import src from './images/logo.png';
 
-import src from './images/logo.png';
-
 const Login=(props)=>{
 
   const { loginTeacher , userAuth , errors , clearError } = useContext(AuthContext)
