@@ -46,9 +46,9 @@ const Exam=()=>{
     useEffect(async () => {
         const response = await axios.get(`/exam/getExamDetails/${_id}`);
 
-        setExam(response.data.exam);
+        await setExam(response.data.exam);
 
-        setStudents(response.data.students);
+        await setStudents(response.data.students);
 
         setStudentLength(response.data.students.length);
 
@@ -71,39 +71,42 @@ const Exam=()=>{
       marginTop:'-50px'
     }
 
+    const INPUT_STYLES = {
+      background:'#A7E2F3',
+      border:'1px solid black'
+    }
+
     return (
       <div id='ExamId'>
       <Navbar />
       <div className="PExam">
-      <h1>The Exam</h1>
-      <div class="flex-container">
+      <h1>{exam!==null ? exam.name : 'Exam Name' }</h1>
+      <div className="flex-container">
        
-        <div class="flex-item-left">
+        <div className="flex-item-left">
        
-          <input type="text" ref={searchName} placeholder="Search by name" className="search1" onChange={handleChangeName} />
+          <input type="text" ref={searchName} placeholder="Search by name" className="search1" onChange={handleChangeName} style={INPUT_STYLES}/>
        
-          <input type="Number" ref={searchId} placeholder="Search by ID" className="search2" onChange={handleChangeScholarId} />
+          <input type="Number" ref={searchId} placeholder="Search by ID" className="search2" onChange={handleChangeScholarId} style={INPUT_STYLES}/>
        
           <div className="list">
        
-           <p style={{marginTop:'50px'}}>student list</p>
+           <p style={{marginTop:'50px',fontWeight:'bold',fontSize:'100%'}}>Student list</p>
 
-      <table>
-      <tr >
-          <th>Name</th>
-          <th>ID</th>
-          <th>Status</th>
-          <th>Mark</th>
-        </tr>
-      </table>
+           <div className="table">
+                    <table>
+                       <tr style={{color:'black',fontWeight:'bold'}}>
+                           <th style={{fontWeight:'bold'}}>Name</th>
+                           <th style={{fontWeight:'bold'}}>ID</th>
+                           <th style={{fontWeight:'bold'}}>Status</th>
+                           <th style={{fontWeight:'bold'}}>Marks</th>
+                        </tr>
 
-      <table>
-      <hr style={{width:'590px',position:'absolute'}}></hr>
-      { search !== null ? search.length===0 ? 
+                        { search !== null ? search.length===0 ? 
                  <Noresults /> : 
                 search.map(
                   student=>(
-                        <tr>
+                        <tr style={{background:'#F2F0F0'}}>
                           <td><Link to={`/student/getStudentDetails/${student._id}`} style={anchorLink}>{student.name}</Link></td> 
                           <td>{student.scholarId}</td>
                           <td>{student.status===false?'false':'true'}</td>
@@ -115,7 +118,7 @@ const Exam=()=>{
                 <Noresults /> :
                 studentsofExam.map(
                   student=>(
-                      <tr>
+                      <tr style={{background:'#F2F0F0'}}>
                         <td><Link to={`/student/getStudentDetails/${student._id}`} style={anchorLink}>{student.name}</Link> </td>
                         <td>{student.scholarId}</td>
                         <td>{student.status===false?'false':'true'}</td>
@@ -124,36 +127,39 @@ const Exam=()=>{
                   )
                 ) 
            }
-</table>
+    </table>
+                  
+  </div>
+
 
 </div>
 </div>
 <div class="flex-item-right">
 <div className="details">
-    <h4 style={{marginBottom:'50px'}}>Exam Details</h4>
+    <h4 style={{marginBottom:'25px',fontWeight:'bold',fontSize:'105%'}}>Exam Details</h4>
     <table>
-        <tr>
+        <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
             <th>Exam Date</th>
             <th>{exam!==null ? exam.date.split("T")[0] : NaN}</th>
         </tr>
-        <tr>
+        <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
             <td>Student Appreared</td>
             <td>{studentsLength}</td>
         </tr>
-        <tr>
-            <td>student Appreared</td>
+        <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
+            <td>Student Appreared</td>
             <td>{studentsLength}</td>
         </tr>
     </table>
 </div>
 <div className="status">
-    <h3 style={{marginBottom:'50px',marginLeft:'-100px'}}>Check Status</h3>
+    <h3 style={{marginBottom:'25px',marginLeft:'0px',fontWeight:'bold',fontSize:'105%'}}>Check Status</h3>
     <table>
-        <tr>
-            <td>papers checked</td>
+        <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
+            <td>Papers checked</td>
             <td>{checkedStatus}</td>
         </tr>
-        <tr>
+        <tr style={{background:'#F2F0F0',marginBottom:'20px'}}>
             <td>Papers remaining</td>
             <td>{studentsLength - checkedStatus}</td>
         </tr>

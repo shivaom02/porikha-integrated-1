@@ -18,14 +18,14 @@ const ClassRoom = ({classRoom}) => {
     }
     const noexam = "No Exam Till Date";
     return (
-        <div  className='classHall'>
+        <div>
             <div className="card">
-            <Link to={`/exam/${_id}`} style={{textDecoration:"none"}}>
-              <div className="subname">
+            <Link to={`/exam/${_id}`} style={{textDecoration:"none",background:'#1DA6CF'}}>
+              <div className="subname" style={{background:'#1DA6CF'}}>
                   {name}
               </div>
             </Link>
-            <div className="contain" style={{fontSize:'1rem', fontFamily:'sans-serif',position:'relative'}}>
+            <div className="contain" style={{fontSize:'1rem', fontFamily:'sans-serif',position:'relative',background:'#F2F0F0',color:'black'}}>
              <div style={{position:'absolute',top:0,right:0}}>
               <Link to='/'><button style={EDIT_STYLES} onClick={handleChange}>Edit</button></Link>
               <Link to='/'><button style={DELETE_STYLES} onClick={deleteClassroom}>Delete</button></Link>
