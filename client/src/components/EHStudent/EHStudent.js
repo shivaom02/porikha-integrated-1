@@ -42,6 +42,7 @@ const Ehstudent =()=>{
                     const count =tabChange+1
                     setTabChanges(count);
                     console.log(tabChange);
+                    alert("Tab changed note more then 4 tab changes and you will be disqualified");
                 }
                 if(tabChange==4){
                     alert("max tab change limit reached")
