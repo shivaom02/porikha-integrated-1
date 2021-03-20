@@ -63,6 +63,7 @@ const Login=(props)=>{
              type="email" 
              placeholder="Email"
              required 
+             name='email'
              autoComplete="off"
              onChange={handleChange}
              value={email}/>
@@ -74,6 +75,7 @@ const Login=(props)=>{
             type="password"
             placeholder="Password"
             required
+            name='password'
             autoComplete="off"
             onChange={handleChange} 
             value={password}
@@ -85,9 +87,9 @@ const Login=(props)=>{
           <button className="btnSignIn" type="submit">
             Sign In
           </button>
-             {errors !== null && <button style={{height:'30px',color:'white',background:'red'}}>
+             {errors !== null && <button style={{height:'30px',position:'absolute',color:'white',background:'red',marginLeft:'-170px',marginTop:'100px',padding:'20px'}}>
              {errors.msg ? errors.msg : errors.error[0].msg }
-             <span style={{position:'relative',left:'40%'}}>X</span>
+             <button style={{position:'absolute',left:'90%',color:'white'}}>X</button>
             </button>} 
         </div>
       </form>

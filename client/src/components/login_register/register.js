@@ -7,8 +7,8 @@ import src from './images/logo.png';
 
 const Register = (props) => {
   const {
-    // registerTeacher,
-    confirmMail,
+    registerTeacher,
+    //confirmMail,
     userAuth,
     errors,
     setError,
@@ -45,19 +45,20 @@ const Register = (props) => {
       ...teacher,
       [e.target.name]: e.target.value
     });
+    console.log(e.target);
     clearError();
   };
 
-  const submit = async (e) => {
+  const submit = async (e)=>{
     e.preventDefault();
-    if (password !== password_repeat) {
+    if(password !== password_repeat){
       await setError("Password don't match");
       setHide(false);
-    } else {
-      await confirmMail({ name, email, password, phoneNumber, institute });
+    }else{
+      await registerTeacher({name,email,password,phoneNumber,institute});
       setHide(false);
     }
-  };
+  }
 
   const hideDisplay = (e) => {
     setHide(true);
@@ -91,11 +92,18 @@ const Register = (props) => {
             type="text" 
             placeholder="Name" 
             required 
+            name='name'
             onChange={handleChange}
             value={name} />
         </div>
         <div>
-          <input className="email" type="email" placeholder="Email" required onChange={handleChange} value={email}/>
+          <input className="email"
+             type="email" 
+             placeholder="Email"
+             required
+             name='email'
+             onChange={handleChange}
+             value={email}/>
         </div>
         <div>
           <input
@@ -103,6 +111,7 @@ const Register = (props) => {
             type="tel"
             placeholder="Mobile Number"
             required
+            name='phoneNumber'
             onChange={handleChange} 
             value={phoneNumber}
           />
@@ -113,6 +122,7 @@ const Register = (props) => {
             type="password"
             placeholder="Password"
             required
+            name='password'
             onChange={handleChange} 
             value={password}
           />
