@@ -1,7 +1,13 @@
+*
+{
+    margin:0%;
+}
 .SEhead{
-    color: rgb(63, 212, 37);
+    color: #1DA6CF;
     font-size: 4rem;
-    margin: 5rem 0 20vh 0;
+    margin: 3rem 0 13vh 0;
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(144,126,126,0.66);
 }
 .SEtop{
     color:rgb(255, 255, 255);
@@ -12,40 +18,41 @@
     text-align: center;
     padding: 5.5% 5% 5.5% 5%;
     /* width: %; */
-    background-color: #252525;
+    background-color: #33c0eb;
     color: rgb(255, 255, 255);
     border: whitesmoke;
     border: 10px;
-    border-radius: 1vw;
+    border-radius: 1.6vw;
     outline: none;
     border: 2px solid #b9babb;
     font-size: large;
 }
-::placeholder{
-    color: rgb(102, 101, 101);
+.SE_main ::placeholder{
+    color: rgb(255, 255, 255);
 }
 .SEbutton{
  
-    padding: 1.5% 1% 1.5% 1%;
-   margin: 5% 10% 0 10%;
-    background-color: #252525;
+    padding: 2.5% 1% 1.5% 1%;
+  margin: 2% 10% 0 10%;
+    background-color: #0093D4;
     color: rgb(255, 255, 255);
     border: whitesmoke;
     border: 10px;
-    border-radius: 1vw;
+    border-radius: 1.6vw;
     outline: none;
     border: 2px solid #b9babb;
     font-size: large;
 }
 .SEbutton:hover{
-    transform: scale(1.01);
-    background-color: #0f0f0f;
+    transform: scale(1.05);
+   
+    background-color: #056a95;
 }
 .SEfinal{
     padding: 1.5% 1% 1.5% 1%;
-   margin: 10% 10% 0 12%;
+   margin: 5% 10% 0 8%;
     text-align: center;
-    background-color: #252525;
+    background-color: #0093D4;
     color: rgb(255, 255, 255);
     border: whitesmoke;
     border: 10px;
@@ -57,5 +64,5 @@
 .SEfinal:hover{
 
     transform: scale(1.01);
-    background-color: #0f0f0f;
+    background-color: #056a95;
 }
