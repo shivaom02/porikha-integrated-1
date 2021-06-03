@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom';
-
+import Navbar from '../navbar/Navbar';
 import '../../css/student_entry.css';
 import axios from 'axios';
 
@@ -55,14 +55,16 @@ const Student_Entry = () => {
     }
 
     return (
-        <div>
-            <h2  className="SEhead">Student registration Portal for Exam</h2>
+        
+        <div className="SE_main">
+            <Navbar />
+            <h2  className="SEhead">Student registration Portal</h2>
             <form onSubmit={onSubmit} style={container}>
-                 <span className="SEtop">Enter Your Name</span>
+                 <span className="SEtop"></span>
                 <input type='text' name='name' onChange={handleChange} value={name} placeholder='Enter your name' className="SEinput"/>
-                <span className="SEtop">Enter Your Scholar Id</span>
-                <input type='Number' name='scholarId' onChange={handleChange} value={scholarId} placeholder='Enter your scholarId' className="SEinput"/>
-                <span className="SEtop">Enter Your Room Name</span>
+                <span className="SEtop"></span>
+                <input type='Number' name='scholarId' onChange={handleChange}  placeholder='Enter your scholarId' className="SEinput"/>
+                <span className="SEtop"></span>
                 <input type='text' name='room' onChange={handleChange} value={room} placeholder='Enter your room name' className="SEinput"/>
                 <br />
                 <button type='submit' className="SEbutton">Check if exam is still going on</button>
